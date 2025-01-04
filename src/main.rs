@@ -11,6 +11,7 @@ const SERIAL_PORT: &str = "/dev/ttyAMA0";
 const GPIO_PIN: u8 = 12;
 
 // サポートされているコマンド
+// こちらのリポジトリ(https://github.com/iMicknl/LoctekMotion_IoT)から引用させていただきました。
 fn supported_commands() -> HashMap<&'static str, &'static [u8]> {
     HashMap::from([
         ("up", &b"\x9b\x06\x02\x01\x00\xfc\xa0\x9d"[..]),
