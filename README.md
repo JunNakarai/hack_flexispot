@@ -2,8 +2,8 @@
 
 ## 概要
 
-このプロジェクトは、RUSTを用いてFlexispotデバイスを制御するためのツールです。
-これを利用しiPhoneやMacなどのssh接続可能なデバイスからFlexSpotの昇降などの制御が可能になります。
+このプロジェクトは、Rustを用いてFlexispotE8デスクの昇降を制御するためのツールです。
+これを利用しiPhoneやMacなどのssh接続可能なデバイスからデスクの昇降の制御が可能になります。
 
 ## 必要条件
 
@@ -15,35 +15,34 @@
 
 ## インストール
 
-1. リポジトリをRaspberry Piにクローンします。
-    ```sh
-    git clone https://github.com/JunNakarai/hack_flexispot
-    ```
-2. プロジェクトディレクトリに移動します。
-    ```sh
-    cd hack_flexispot
-    ```
-3. 依存関係をインストールします。
-    ```sh
-    cargo build
-    ```
+リポジトリをRaspberry Piにクローンします。
+
+```sh
+git clone https://github.com/JunNakarai/hack_flexispot
+```
 
 ## 使い方
 
 1. プロジェクトをビルドします。
     ```sh
-    cargo build --release
+    cargo build
     ```
 2. プロジェクトを実行します。
     ```sh
-    bash -l -c "cd ~/hack_flexispot && cargo run -- stand"
+    cargo run -- stand
     ```
+
+> [!TIP]
+> `Initialization error: Failed to open serial port: Permission denied`と表示される場合は
+> `sudo chmod 666 /dev/serial0`を実行し権限を付与して下さい。
 
 ## サポートされているコマンド
 
 以下のコマンドがサポートされています：
-- `stand`: スタンディング状態
-- コマンド2: 説明
+- `1`: プリセット1
+- `2`: プリセット2
+- `sit`: 座り
+- `stand`: 立ち
 
 ## クレジット
 
